@@ -31,7 +31,7 @@ bool isCyclicBFS(unordered_map<int, list<int>>& adjlist, unordered_map<int, bool
 
         // traverse all neighbors of front node
         for (auto neighbour: adjlist[frontnode]) {
-            if (!visited[neighbour] == true && neighbour!=parent[frontnode]) {
+            if (visited[neighbour] == true && neighbour!=parent[frontnode]) {
                 return true;
                
             }

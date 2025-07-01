@@ -47,7 +47,7 @@ vector < vector <int >> printAdjancy(int n , int m , vector < vector <int >> edg
     for(int i = 0 ; i<n; i++){
         adj[i].push_back(i); //khud ka kud se conecton
         for(int j = 0; j< ans[i].size();j++){
-           adj[j].push_back(ans[i][j]);
+           adj[i].push_back(ans[i][j]);
         }
     }
     return adj;
