@@ -30,6 +30,7 @@ bool isCyclicBFS(unordered_map<int, list<int>>& adjlist, unordered_map<int, bool
         q.pop();
 
         // traverse all neighbors of front node
+        //While traversing, if we encounter a visited neighbor that is not the parent of currfrontnode, a cycle exists.
         for (auto neighbour: adjlist[frontnode]) {
             if (visited[neighbour] == true && neighbour!=parent[frontnode]) {
                 return true;
