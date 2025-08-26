@@ -5,6 +5,7 @@
 class DisjointSet {
    
     vector<int> rank , parent;
+    vector<int> size;
     public:  
     DisjointSet(int n){
         parent.resize(n+1);
@@ -33,6 +34,22 @@ class DisjointSet {
             rank[ulp_u]++;
         }
     }
+     void unionBySize(int u, int v){
+        int ulp_u = findUPar(u);
+        int ulp_v = findUPar(v);
+        if(ulp_u == ulp_v) return;
+        if(size[ulp_u] < size[ulp_v]){
+            parent[ulp_u] = ulp_v;
+            size[ulp_v] += size[ulp_u];
+           
+        }else{
+            parent[ulp_v] = ulp_u;
+            size[ulp_u] += size[ulp_v];
+            // size[ulp_u]++;
+            // size[ulp_v]++;
+          
+        }
+    }
  };
 
 int main(){
@@ -57,7 +74,5 @@ int main(){
         // 4 - 5 - 6  
         // time complexity O(4*alpha) ~ O(4)  
         // space complexity O(n)  
-        // path compression  
-        // union by rank  
-       
-}
+    }
+
