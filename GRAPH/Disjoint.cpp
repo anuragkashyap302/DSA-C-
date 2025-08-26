@@ -12,6 +12,8 @@ class DisjointSet {
         rank.resize(n+1, 0);
         for(int i = 0; i < n; i++){
             parent[i] = i;
+            size.resize(n+1, 1);
+            
         }
     }
     int findUPar(int node){
