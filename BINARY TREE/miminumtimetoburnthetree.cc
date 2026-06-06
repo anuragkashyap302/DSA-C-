@@ -110,7 +110,8 @@ int mintimetoburn(node*root,int target){
 //aur taget jaha se shuru karna hai wo level order se nikl lo
 
 
-
+// k distance of target node from root bhi issi tarkise niklega
+// wo sawaal bhi aise hie banega
 
    
     map< node* ,node*> nodetoparent;
